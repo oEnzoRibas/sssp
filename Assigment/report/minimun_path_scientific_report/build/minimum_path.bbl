@@ -1,0 +1,27 @@
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Lemos et~al.(2014)Lemos, Borish, Cole, Ramelow, Lapkiewicz, and
+  Zeilinger]{Lemos_2014}
+Gabriela~Barreto Lemos, Victoria Borish, Garrett~D. Cole, Sven Ramelow, Radek
+  Lapkiewicz, and Anton Zeilinger.
+\newblock Quantum imaging with undetected photons.
+\newblock \emph{Nature}, 512\penalty0 (7515):\penalty0 409--412, August 2014.
+\newblock ISSN 0028-0836, 1476-4687.
+\newblock \doi{10.1038/nature13586}.
+\newblock URL \url{https://www.nature.com/articles/nature13586}.
+
+\bibitem[Einstein et~al.(1935)Einstein, Podolsky, and
+  Rosen]{Einstein-Podolsky-Rosen}
+Albert Einstein, Boris Podolsky, and Nathan Rosen.
+\newblock Can quantum-mechanical description of physical reality be considered
+  complete?
+\newblock \emph{Phys. Rev.}, 47:\penalty0 777--780, May 1935.
+\newblock \doi{10.1103/PhysRev.47.777}.
+\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRev.47.777}.
+
+\end{thebibliography}

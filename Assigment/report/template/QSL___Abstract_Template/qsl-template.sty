@@ -1,0 +1,83 @@
+% qsl-template.sty
+% rzor
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{qsl-template}[2026/01/12 Quantum Sensing Linz abstract template]
+
+% ===== Packages =====
+\RequirePackage[margin=2cm]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{ragged2e}
+\RequirePackage{float}
+\RequirePackage{graphicx}
+\RequirePackage{caption}
+\captionsetup{font=small}
+\RequirePackage[numbers,sort&compress]{natbib}
+\RequirePackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\RequirePackage{titlesec}
+\titleformat{\section}{\bfseries\normalsize}{\thesection}{0.5em}{}
+\titlespacing{\section}{0pt}{0.8em}{0.4em}
+
+% ===== Global paragraph settings =====
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% ===== Author helpers =====
+
+\newcommand{\Author}[2]{%
+  #1\textsuperscript{#2}%
+}
+
+\newcommand{\AuthorSep}{,\allowbreak\space}
+\newcommand{\AuthorLastSep}{,\allowbreak\space and~}
+
+\newcommand{\Affil}[2]{%
+  \small\textsuperscript{#1}#2%
+}
+
+\newcommand{\AffilSep}{\\}
+
+\newcommand{\CorrEmail}[1]{%
+  \small\texttt{#1}%
+}
+
+\DeclareRobustCommand{\orcid}[1]{%
+  \href{https://orcid.org/#1}{\includegraphics[width=8pt]{orcid}}%
+}
+
+\newcommand{\AuthorsBlock}[3]{%
+  \author{%
+    \parbox{0.95\textwidth}{%
+      \centering
+      \leavevmode
+      #1\\[0.4em]%
+      #2\\[0.2em]%
+      \CorrEmail{\normalfont#3}%
+    }%
+  }%
+  \date{}%
+}
+
+% ===== Abstract formatting =====
+\makeatletter
+\renewcommand{\abstract}[1]{%
+  \vspace{-0.5em}%
+  \begin{center}
+    {\bfseries Abstract}
+  \end{center}
+  \vspace{-0.6em}%
+  \begingroup
+    \small
+    \setlength{\parindent}{0pt}%
+    \setlength{\parskip}{0.4em}%
+    \justifying
+    % ---- make abstract narrower ----
+    \leftskip=0.05\textwidth
+    \rightskip=0.05\textwidth
+    \noindent\ignorespaces
+    #1\par
+  \endgroup
+  \vspace{1.3em}%
+}
+\makeatother
