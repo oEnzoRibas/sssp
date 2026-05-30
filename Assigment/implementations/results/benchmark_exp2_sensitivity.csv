@@ -1,9 +1,17 @@
 Experiment,Type,N,E,K,|S|,|W|,|P|,|U_tilde|,Dijkstra Time (s),Pivots Time (s),Bellman-Ford Time (s)
-2_Sensitivity,sparse,10000,20000,2,74,74,0,102,0.076327,0.028750,N/A
-2_Sensitivity,sparse,10000,20000,4,74,74,0,102,0.076327,0.022092,N/A
-2_Sensitivity,sparse,10000,20000,6,74,74,0,102,0.076327,0.020958,N/A
-2_Sensitivity,sparse,10000,20000,8,74,74,0,102,0.076327,0.021477,N/A
-2_Sensitivity,sparse,10000,20000,10,74,74,0,102,0.076327,0.019383,N/A
-2_Sensitivity,sparse,10000,20000,12,74,74,0,102,0.076327,0.019429,N/A
-2_Sensitivity,sparse,10000,20000,14,74,74,0,102,0.076327,0.018538,N/A
-2_Sensitivity,sparse,10000,20000,16,74,74,0,102,0.076327,0.020388,N/A
+2_Sensitivity,sparse,500,1000,2,22,22,0,24,0.001197,0.000742,N/A
+2_Sensitivity,sparse,500,1000,4,22,22,0,24,0.001197,0.000622,N/A
+2_Sensitivity,sparse,500,1000,6,22,22,0,24,0.001197,0.000642,N/A
+2_Sensitivity,sparse,500,1000,8,22,22,0,24,0.001197,0.000957,N/A
+2_Sensitivity,sparse,500,1000,10,22,22,0,24,0.001197,0.000618,N/A
+2_Sensitivity,sparse,500,1000,12,22,22,0,24,0.001197,0.000612,N/A
+2_Sensitivity,sparse,500,1000,14,22,22,0,24,0.001197,0.000545,N/A
+2_Sensitivity,sparse,500,1000,16,22,22,0,24,0.001197,0.000583,N/A
+2_Sensitivity,sparse,1000,2000,2,30,30,0,32,0.003542,0.001223,N/A
+2_Sensitivity,sparse,1000,2000,4,30,30,0,32,0.003542,0.001167,N/A
+2_Sensitivity,sparse,1000,2000,6,30,30,0,32,0.003542,0.001057,N/A
+2_Sensitivity,sparse,1000,2000,8,30,30,0,32,0.003542,0.001084,N/A
+2_Sensitivity,sparse,1000,2000,10,30,30,0,32,0.003542,0.001450,N/A
+2_Sensitivity,sparse,1000,2000,12,30,30,0,32,0.003542,0.001317,N/A
+2_Sensitivity,sparse,1000,2000,14,30,30,0,32,0.003542,0.001148,N/A
+2_Sensitivity,sparse,1000,2000,16,30,30,0,32,0.003542,0.001061,N/A
