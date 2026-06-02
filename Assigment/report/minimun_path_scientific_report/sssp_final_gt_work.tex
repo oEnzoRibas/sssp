@@ -33,10 +33,10 @@
 
 %%%%%%%%%% Abstract %%%%%%%%%%
 \abstract{
-Write your abstract here. The abstract should concisely describe the scientific motivation,
-methods, main results, and relevance to quantum sensing and related physics topics.
-(keep it max. 150 words)}
+Este trabalho apresenta a implementação e a análise experimental de algoritmos de caminhos mínimos em grafos direcionados, com foco nos algoritmos clássicos de Dijkstra e Bellman-Ford e no estudo de conceitos introduzidos pelo artigo \textit{Breaking the Sorting Barrier for Directed Single-Source Shortest Paths} (Duan et al., 2025). Inicialmente, foi realizada uma comparação de desempenho entre Dijkstra e Bellman-Ford em grafos aleatórios esparsos e densos. Os resultados confirmaram o comportamento previsto pela teoria de complexidade, evidenciando a superioridade do algoritmo de Dijkstra em todos os cenários avaliados, especialmente em grafos densos. Em seguida, foi desenvolvida e avaliada uma implementação parcial baseada no mecanismo de poda de pivôs descrito pelo Lema 3.2 do artigo estudado. Os experimentos investigaram o impacto do parâmetro de profundidade (k) sobre a redução do conjunto de pivôs e sobre o tempo total de execução. Os resultados demonstraram que a implementação preservou as restrições matemáticas estabelecidas pelo lema, porém a poda efetiva ocorreu apenas para valores elevados de (k). Para os demais cenários, o mecanismo de segurança foi frequentemente acionado, limitando a redução da fronteira e resultando em um custo computacional adicional superior aos benefícios obtidos. Em todas as instâncias avaliadas, a abordagem baseada em pivôs apresentou tempos de execução superiores aos do algoritmo de Dijkstra executado diretamente. Os resultados obtidos contribuem para a compreensão prática dos algoritmos clássicos de caminhos mínimos e dos mecanismos teóricos propostos em pesquisas recentes sobre o problema de caminho mínimo de fonte única.
 
+\textbf{Palavras-chave:} caminhos mínimos; algoritmos em grafos; Dijkstra; Bellman-Ford; BMSSP; análise de desempenho.
+}
 
 %%%%%%%%%% Body %%%%%%%%%%
 \section{Introdução e Motivação}
@@ -655,8 +655,37 @@ Finalmente, a Figura \ref{fig:exp2_dash_10000} sela a inviabilidade prática do 
     \label{fig:exp2_dash_10000}
 \end{figure}
 
-\section{Discussion}
-Summarize the key results and their significance.
+\section{Discussão}
+
+Os resultados obtidos neste trabalho permitem analisar tanto o comportamento dos algoritmos clássicos de caminhos mínimos quanto a aplicação prática da estratégia de poda de pivôs baseada no Lema 3.2 do artigo \textit{Breaking the Sorting Barrier for Directed Single-Source Shortest Paths}.
+
+No primeiro experimento, os resultados confirmaram integralmente o comportamento previsto pela análise de complexidade dos algoritmos clássicos. Em todos os cenários avaliados, o algoritmo de Dijkstra apresentou tempos de execução inferiores aos observados para o Bellman-Ford. Essa diferença foi observada tanto em grafos esparsos quanto em grafos densos, tornando-se mais expressiva à medida que o número de arestas aumentava. Enquanto o Dijkstra manteve crescimento controlado dos tempos de execução, o Bellman-Ford apresentou aumento significativamente mais acentuado, refletindo diretamente a diferença entre suas complexidades teóricas.
+
+O segundo experimento teve como foco a avaliação da estratégia de poda de pivôs proposta pelo Lema 3.2. Os resultados demonstraram inicialmente que a implementação desenvolvida preserva a corretude matemática do método. Em todas as execuções realizadas, a restrição teórica que limita o número de pivôs foi respeitada, validando a implementação da lógica de extração e filtragem descrita pelo lema.
+
+Entretanto, a análise experimental mostrou que a poda efetiva raramente ocorreu nos cenários avaliados. Para os valores de profundidade considerados no cenário principal $((k \le 16))$, o conjunto de pivôs permaneceu praticamente idêntico ao tamanho da fronteira inicial. Os dados mostram que o gatilho de segurança responsável por interromper a expansão da busca foi acionado repetidamente, fazendo com que a rotina retornasse a fronteira quase sem redução. Como consequência, o algoritmo realizou todo o trabalho associado à expansão local, construção das estruturas auxiliares e análise da floresta de busca sem obter uma diminuição significativa do número de pivôs.
+
+Esse comportamento refletiu-se diretamente no desempenho observado. Em todos os valores testados para (N=1000) e $(k \le 16)$, a abordagem baseada em pivôs apresentou penalidades superiores a 29 vezes o tempo do Dijkstra clássico, atingindo mais de 38 vezes para determinados valores de (k). Assim, o custo adicional introduzido pelo processo de poda mostrou-se significativamente superior ao benefício efetivamente obtido.
+
+A análise complementar realizada com valores maiores de (k) permitiu identificar quando a poda passa a ocorrer de forma mais intensa. Os resultados mostram que reduções expressivas no número de pivôs surgem apenas para valores elevados de profundidade, como (k=32), (64) ou (128), dependendo do tamanho da instância. Nesses casos, a quantidade de pivôs diminui substancialmente e o tempo total da abordagem também é reduzido. Contudo, observa-se simultaneamente que o conjunto expandido (W) já alcança centenas ou milhares de vértices, indicando que uma parcela significativa do grafo foi explorada antes da realização da poda.
+
+Os testes de escalabilidade reforçam essa tendência. À medida que o número de vértices cresce, a diferença entre o Dijkstra clássico e a implementação baseada em pivôs torna-se ainda mais evidente. Para instâncias com 5.000 e 10.000 vértices, a penalidade permaneceu elevada mesmo para valores relativamente altos de (k), alcançando dezenas de vezes o tempo necessário para executar o Dijkstra tradicional. Embora a redução do conjunto de pivôs eventualmente ocorra, o custo acumulado das etapas anteriores continua predominante.
+
+Portanto, considerando exclusivamente os cenários experimentais avaliados neste trabalho, os resultados indicam que a implementação baseada no Lema 3.2 preserva as garantias matemáticas descritas pelo artigo, porém não produziu ganhos de desempenho em relação ao algoritmo de Dijkstra. A estratégia de poda mostrou-se limitada pela ativação frequente do mecanismo de segurança e pelo elevado custo computacional associado às etapas de pré-processamento. Dessa forma, para todas as instâncias analisadas, o Dijkstra clássico permaneceu como a alternativa mais eficiente em termos de tempo de execução.
+
+
+\section{Conclusão}
+
+Este trabalho teve como objetivo implementar e analisar algoritmos de caminhos mínimos em grafos direcionados, explorando tanto abordagens clássicas quanto conceitos introduzidos pelo artigo \textit{Breaking the Sorting Barrier for Directed Single-Source Shortest Paths} (Duan et al., 2025). Para isso, foram desenvolvidas implementações dos algoritmos de Dijkstra e Bellman-Ford, além de uma implementação parcial da estratégia de otimização de fronteira baseada no procedimento \textit{FindPivots} e no Lema 3.2 apresentado pelos autores.
+
+A comparação entre os algoritmos clássicos confirmou experimentalmente os resultados previstos pela teoria, evidenciando o melhor desempenho do algoritmo de Dijkstra em todos os cenários avaliados. Os experimentos também permitiram validar o funcionamento da implementação desenvolvida para a estratégia de poda de pivôs, verificando o atendimento às restrições matemáticas estabelecidas pelo lema estudado.
+
+Embora a abordagem baseada em pivôs não tenha produzido ganhos de desempenho nos cenários experimentais considerados, sua implementação possibilitou compreender, na prática, os mecanismos que compõem uma das contribuições centrais do artigo analisado. Dessa forma, o trabalho cumpriu seu objetivo de investigar tanto os fundamentos clássicos do problema de caminhos mínimos quanto técnicas mais recentes propostas na literatura.
+
+Além dos resultados obtidos, o projeto proporcionou uma experiência prática na implementação, instrumentação e avaliação experimental de algoritmos em grafos, permitindo relacionar conceitos teóricos de análise de complexidade com medições reais de desempenho.
+
+Como continuidade deste estudo, trabalhos futuros podem explorar diferentes classes de grafos, analisar o comportamento da estratégia de poda em outras topologias e incorporar componentes adicionais descritos no artigo original, ampliando a investigação sobre a aplicabilidade prática das técnicas propostas pelos autores.
+
 
 %%%%%%%%%% References %%%%%%%%%%
 \bibliographystyle{apalike}

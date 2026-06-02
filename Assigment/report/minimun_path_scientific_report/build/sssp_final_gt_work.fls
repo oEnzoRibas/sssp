@@ -226,6 +226,8 @@ INPUT /usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtt9.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmri9.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmbx9.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
@@ -249,10 +251,10 @@ INPUT /usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
-INPUT /usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT ./media/exp1/exp1_dijkstra_vs_bellman.png
 INPUT ./media/exp1/exp1_dijkstra_vs_bellman.png
 INPUT ./media/exp1/exp1_dijkstra_vs_bellman.png
@@ -314,6 +316,7 @@ INPUT build/sssp_final_gt_work.out
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmbx8.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmbx9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb
@@ -325,6 +328,7 @@ INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmri9.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
