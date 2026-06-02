@@ -14,14 +14,15 @@
 %%%%%%%%%% Author(s) %%%%%%%%%%
 \AuthorsBlock
 {% No empthy line here
-  \Author{Ribas, R. L. D. E.}{1}
-  % \AuthorSep
-  % \Author{Second Author}{1}
-  % \AuthorLastSep
-  % \Author{Third Author}{1}
+  \Author{Ribas, E. R. L. D.}{1,2}
+  \AuthorSep
+  \Author{Ramalho, P. L. V. S.}{1}
+  \AuthorLastSep
+  \Author{Ramalho, J. A. V.}{1}
 }
 {% No empthy line here
   \Affil{1}{Centro Universitário Dom Helder, Curso de Ciência da Computação, Belo Horizonte, Brazil}
+  \Affil{2}{Federal Center of Technological Education of Minas Gerais, Belo Horizonte, Brazil}
 }
 {enzorochaleitedinizribas@gmail.com}
 
@@ -112,6 +113,19 @@ Para avaliar a sensibilidade dos algoritmos à densidade das arestas, os grafos 
 
 O cruzamento destas topologias permite evidenciar o impacto estrutural da fila de prioridade do algoritmo de Dijkstra em contraposição ao relaxamento massivo de arestas do Bellman-Ford.
 
+
+\subsubsection{Decisões de Projeto e Desafios Encontrados}
+
+Inicialmente foi adotada uma abordagem com matrizes de adjacencia para a geração dos grafos por meio do algoritmo parametrizável para geração de grafos aleatórios, mas com o crescimento do número de vértices, a complexidade espacial de $O(V^2)$ tornou-se proibitiva, especialmente para grafos densos, o tempo para leitura e escrita dos dados se tornou inviável (cerca de 5-10 minutos para grafos com 10.000 vértices). Para contornar esse desafio, a implementação foi adaptada para utilizar listas de adjacência, que oferecem uma representação mais compacta e eficiente para grafos esparsos, reduzindo a complexidade espacial para $O(V + E)$.
+
+O algoritmo \textit{get\_neighbors} na implementação inicial tinha um tempo de execução $O(V)$ para cada vértice analisado, criando um \textit{overhead} significativo. Já na implementação final com listas de adjacência, o tempo de execução para obter vizinhos de um grafo se torna $O(1)$ ou $O(k)$ para vértices de $k$ vizinhos.
+
+Além disso, para evitar a presença de arestas paralelas e loops, uma estrutura de dados \textit{seen\_nodes} foi introduzida durante a geração dos grafos, garantindo a unicidade das arestas e a integridade estrutural do grafo. Apesar de não ter funcionado inicialmente, o problema foi identificado e corrigido, sua causa era que para grafos com o número de arestas maior que o máximo teórico para um grafo simples $(E > \frac{N(N-1)}{2})$, o algoritmo de geração entrava em um loop infinito tentando gerar arestas únicas, a solução foi limitar o número de arestas para o máximo teórico permitido para um grafo simples.
+
+Ademais, durante os \textit{batches} de \textit{benchmarking}, foi necessário introduzir uma lógica de \textit{caching}, para evitar que os grafos fossem gerados todas as vezes que o algoritmo fosse rodado, economizando uma quantidade siginificativa de tempo.
+
+A implementação de ambos os algoritmos exigiu uma série de decisões de projeto para garantir a eficiência e a correção. Para o algoritmo de Dijkstra, a escolha da estrutura de dados para a fila de prioridade foi crucial, optando-se por um \textit{Binary Heap (heappq)} para equilibrar a complexidade de inserção e extração. Já para o Bellman-Ford, a implementação do mecanismo de \textit{Early Stopping} foi fundamental para evitar iterações desnecessárias em casos onde os caminhos mínimos já haviam convergido.
+
 \subsubsection{Implementação do Algoritmo de Dijkstra}
 
 A implementação do algoritmo de Dijkstra foi desenhada para maximizar a eficiência empírica no modelo de computação clássico. Para assegurar a complexidade estrutural de $O((V + E) \log V)$, adotou-se uma fila de prioridade baseada em um \textit{Binary Heap}, utilizando a biblioteca nativa \texttt{heapq} da linguagem Python. O controle de estado dos vértices foi projetado por meio de tabelas de espalhamento (\textit{hash tables} implementadas via \texttt{dict}), o que garante tempo de acesso amortizado $O(1)$ para a recuperação de distâncias correntes, verificação de nós visitados e rastreamento de predecessores.
@@ -196,18 +210,6 @@ O detalhamento da lógica iterativa, incluindo a condição de otimização, enc
 \State \Return $d, \pi, \Delta t$
 \end{algorithmic}
 \end{algorithm}
-
-\subsubsection{Decisões de Projeto e Desafios Encontrados}
-
-Inicialmente foi adotada uma abordagem com matrizes de adjacencia para a geração dos grafos por meio do algoritmo parametrizável para geração de grafos aleatórios, mas com o crescimento do número de vértices, a complexidade espacial de $O(V^2)$ tornou-se proibitiva, especialmente para grafos densos, o tempo para leitura e escrita dos dados se tornou inviável (cerca de 5-10 minutos para grafos com 10.000 vértices). Para contornar esse desafio, a implementação foi adaptada para utilizar listas de adjacência, que oferecem uma representação mais compacta e eficiente para grafos esparsos, reduzindo a complexidade espacial para $O(V + E)$.
-
-O algoritmo \textit{get\_neighbors} na implementação inicial tinha um tempo de execução $O(V)$ para cada vértice analisado, criando um \textit{overhead} significativo. Já na implementação final com listas de adjacência, o tempo de execução para obter vizinhos de um grafo se torna $O(1)$ ou $O(k)$ para vértices de $k$ vizinhos.
-
-Além disso, para evitar a presença de arestas paralelas e loops, uma estrutura de dados \textit{seen\_nodes} foi introduzida durante a geração dos grafos, garantindo a unicidade das arestas e a integridade estrutural do grafo. Apesar de não ter funcionado inicialmente, o problema foi identificado e corrigido, sua causa era que para grafos com o número de arestas maior que o máximo teórico para um grafo simples $(E > \frac{N(N-1)}{2})$, o algoritmo de geração entrava em um loop infinito tentando gerar arestas únicas, a solução foi limitar o número de arestas para o máximo teórico permitido para um grafo simples.
-
-Ademais, durante os \textit{batches} de \textit{benchmarking}, foi necessário introduzir uma lógica de \textit{caching}, para evitar que os grafos fossem gerados todas as vezes que o algoritmo fosse rodado, economizando uma quantidade siginificativa de tempo.
-
-A implementação de ambos os algoritmos exigiu uma série de decisões de projeto para garantir a eficiência e a correção. Para o algoritmo de Dijkstra, a escolha da estrutura de dados para a fila de prioridade foi crucial, optando-se por um \textit{Binary Heap (heappq)} para equilibrar a complexidade de inserção e extração. Já para o Bellman-Ford, a implementação do mecanismo de \textit{Early Stopping} foi fundamental para evitar iterações desnecessárias em casos onde os caminhos mínimos já haviam convergido.
 
 \subsubsection{Discussão e Resultados}
 
