@@ -42,14 +42,13 @@ methods, main results, and relevance to quantum sensing and related physics topi
 
 A Teoria de Grafos é um ramo da matemática e da ciência da computação que estudada as relações entre objetos diversos. Ela é amplamente utilizada como ferramenta de modelagem de problemas reais em diversas áreas do conhecimento, como ciência da computação, engenharias, ciências biológicas, etc..
 
-Um dos problemas mais clássicos e fundamentais na teoria de grafos é o problema do caminho mínimo, que consiste em encontrar uma otimização de um caminho entre dois objetos em um grafo, em que esse caminho pode ser criterizado por um peso, como distância, tempo, custo, etc.. Existem diversos algoritmos para modelar e encontrar soluções para o problema do caminho mínimo, dentre as principais estão os algoritmos de Dijkstra, Bellman-Ford, A* e mais recentemente, o algoritmo de FindPivots (É ESSE O NOMES MESMO?), que é uma ? do algoritmo de Dijkstra.
+Um dos problemas mais clássicos e fundamentais na teoria de grafos é o problema do caminho mínimo ou \textit{Single Source Shortest Path (SSSP)}, que consiste em encontrar uma otimização de um caminho entre dois objetos em um grafo, em que esse caminho pode ser criterizado por um peso, como distância, tempo, custo, etc.. Existem diversos algoritmos para modelar e encontrar soluções para o problema do caminho mínimo, dentre as principais estão os algoritmos de Dijkstra, Bellman-Ford, A* e mais recentemente, o algoritmo de Proposto por \citep{breakingTheSortingBarrier} chamado de \textit{Bounded Multi-Source Shortest Path (BMSSP)} que é uma adaptação do algoritmo clássico de Dijkstra que promete uma melhoria de desempenho temporal para um caso espécifico de grafos.
 
-Este trabalho tem como objetivo realizar um análise experimental dos algoritmos de Dijkstra, Bellman-Ford e FindPivots, comparando suas eficiências e aplicabilidades em diferentes tipos de grafos. Através de uma série de experimentos, buscamos entender as vantagens e limitações de cada algoritmo, bem como identificar cenários em que um pode ser preferível ao outro.
+Este trabalho tem como objetivo realizar um análise experimental dos algoritmos de Dijkstra, Bellman-Ford e da Sub-rotina FindPivots, que faz parte do núcleo da contribuição de \citep{breakingTheSortingBarrier}, comparando suas eficiências a partir de um \textit{Benchmark} experimental. Através de uma série de experimentos, buscamos entender as vantagens e limitações de cada algoritmo, bem como identificar cenários em que um pode ser preferível ao outro.
 
 \section{Fundamentação Teórica}
 
 \subsection{Teoria de Grafos}
-
 
 Um grafo, denotado por $\mathcal{G}$, é uma estrutura composta por um conjunto ordenado de pares $\left(V;E\right) $, em que $V$ é o conjunto dos vértices (ou nós) e $E$ é o conjunto das arestas entre os vértices. 
 
@@ -57,14 +56,43 @@ Durante a modelagem de problemas reais, é conveniente construir $\mathcal{G}$ c
 
 
 \subsection{Algoritmos de Caminho Mínimo}
+O algoritmo prosposto por Edsger Dijkstra em 1959, \citep{dijkstra1959note} permanece invicto até a os dias atuais, quando o assunto é algoritmos de SSSP para pesos não negativos. Em paralelo, o Algoritmo proposto por \citep{ford}, conhecido com Algoritmo de Bellman-Ford é a solução clássica que permite a presença de arestas com pesos negativos, embora seja significativamente mais lento que o Dijkstra.
 
-Contrastando com a abordagem gulosa (\textit{greedy}) do Dijkstra, a implementação do algoritmo de Bellman-Ford adota o princípio de programação dinâmica. A sua arquitetura prescinde de estruturas de dados complexas para ordenação (como filas de prioridade), iterando sistematicamente sobre todas as arestas do grafo e aplicando o processo de relaxamento até $|V| - 1$ vezes. 
+Contrastando com a abordagem gulosa (\textit{greedy}) do Dijkstra, a implementação do algoritmo de Bellman-Ford adota o princípio de programação dinâmica. A sua arquitetura prescinde de estruturas de dados complexas para ordenação, como filas de prioridade (e.g. \textit{Min Heap}), iterando sistematicamente sobre todas as arestas do grafo e aplicando o processo de relaxamento até $|V| - 1$ vezes. 
+
+Por sua vez, o algoritmo de \citep{breakingTheSortingBarrier} propõe uma abordagem híbrida, combinando a eficiência do Dijkstra com uma estratégia \textit{Divide and Conquer}, que consiste numa poda de fronteira baseada em pivôs, que visa reduzir o número de fontes múltiplas a serem processadas, mitigando o impacto temporal do recálculo isolado. O cerne dessa otimização reside na sub-rotina \textit{FindPivots}, que implementa o Lema 3.2 do \citep{breakingTheSortingBarrier}, um mecanismo de busca local que limita a expansão da fronteira $S$ a um subconjunto estrito de pivôs $P$, cuja cardinalidade é teoricamente garantida por $|P| \le \frac{|W|}{k}$, onde $W$ é o conjunto expandido e $k$ é um parâmetro de profundidade.
 
 \section{Experimentos}
 
-O presente trabalho, alinhado às diretrizes de \citep{TP01}, propõe a implementação e a análise comparativa de desempenho dos algoritmos clássicos para o problema de Caminhos Mínimos de Fonte Única ou \textit{Single Source Shortest Path (SSSP)}, notadamente Bellman-Ford e Dijkstra. Além de estabelecer este \textit{benchmark} referencial, o estudo apresenta uma implementação e uma análise empírica crítica do algoritmo \textit{Find Pivots} (Lema 3.2), que constitui o núcleo da recente contribuição teórica de \cite{breakingTheSortingBarrier}.
+O presente trabalho, alinhado às diretrizes de \citep{TP01}, propõe a implementação e a análise comparativa de desempenho dos algoritmos clássicos para o problema de Caminhos Mínimos de Fonte Única ou \textit{Single Source Shortest Path (SSSP)}, notadamente Bellman-Ford e Dijkstra. Além de estabelecer este \textit{benchmark} referencial, o estudo apresenta uma implementação e uma análise empírica crítica da sub-rotina \textit{Find Pivots} (Lema 3.2), que constitui o núcleo da recente contribuição teórica de \cite{breakingTheSortingBarrier}.
 
-Todas as implementações do \textit{benchmark} foram integralmente desenvolvidos na linguagem Python (versão 3.14.3) e estão disponibilizadas em \citep{ribas2026sssp}. O escopo de validação empírica foi metodologicamente estruturado em dois experimentos principais, detalhados nas subseções a seguir.
+Vale ressaltar que o escopo deste trabalho é estritamente experimental, focando na implementação e na avaliação de desempenho dos algoritmos mencionados e não representa uma implementação integral do algoritimo BMSSP proposto por \cite{breakingTheSortingBarrier}. A análise teórica detalhada, incluindo a prova formal do Lema 3.2 e a demonstração da complexidade assintótica do BMSSP, está além do escopo desse relatório e é recomendada para leitura direta na fonte original, e fica como sugestão para trabalhos futuros.
+
+\subsection{Ambiente Experimental}
+
+Todas as implementações do \textit{benchmark} foram integralmente desenvolvidos na linguagem Python (versão 3.14.3), escolhida por sua simplicidade e alta velocidade de desenvolvimento, e estão disponibilizadas em \citep{ribas2026sssp}.
+Todos os testes foram realizados em uma máquina com as seguintes especificações:
+\begin{table}[h]
+\centering
+\caption{Ambiente de Teste e Versões. Fonte: Próprio autor.}\label{tab:ambiente_teste}
+\begin{tabular}{l l}
+\hline
+\textbf{Linguagem} & \textbf{Versão} \\
+\hline
+Python & 3.14.3 \\
+\hline
+\multicolumn{2}{l}{\textbf{Hardware}} \\
+\hline
+Processador & Intel(R) Core(TM) i3-4010U CPU @ 1.70GHz \textit{Cores} \\
+Memória RAM & 16 GB \\
+GPU & Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 09)\\
+S.O. & Arch Linux 6.19.11-arch1-1 \\
+\hline
+\label{tab:ambiente_teste}
+\end{tabular}
+\end{table}
+
+O escopo de validação empírica foi metodologicamente estruturado em dois experimentos principais, detalhados nas subseções a seguir.
 
 \subsection{Experimento 1: Comparativo de Desempenho (Dijkstra vs. Bellman-Ford) em Grafos Aleatórios}
 
@@ -74,7 +102,7 @@ O primeiro experimento tem como objetivo avaliar o comportamento e o tempo de ex
 
 As instâncias de teste foram dimensionadas com o número de vértices variando no conjunto 
 \[
-  N \in \{100, 500, 1000, 5000, 10000
+  N \in \{100, 500, 1000, 5000, 10000\}
 \].
 Para avaliar a sensibilidade dos algoritmos à densidade das arestas, os grafos foram segmentados em duas categorias:
 \begin{itemize}
@@ -83,7 +111,6 @@ Para avaliar a sensibilidade dos algoritmos à densidade das arestas, os grafos 
 \end{itemize}
 
 O cruzamento destas topologias permite evidenciar o impacto estrutural da fila de prioridade do algoritmo de Dijkstra em contraposição ao relaxamento massivo de arestas do Bellman-Ford.
-
 
 \subsubsection{Implementação do Algoritmo de Dijkstra}
 
@@ -144,7 +171,7 @@ O detalhamento da lógica iterativa, incluindo a condição de otimização, enc
 \State $d[v] \gets \infty, \forall v \in V$
 \State $\pi[v] \gets \text{Nulo}, \forall v \in V$
 \State $d[s] \gets 0$
-\For{$i = 1$ \textbf{até} $|V| - 1$}
+\For{$i = 1$ \textbf{to} $|V| - 1$}
     \State $updated \gets \text{Falso}$
     \ForAll{$u \in V$}
         \If{$d[u] = \infty$}
@@ -161,7 +188,7 @@ O detalhamento da lógica iterativa, incluindo a condição de otimização, enc
             \EndIf
         \EndFor
     \EndFor
-    \If{\textbf{não} $updated$}
+    \If{\textbf{not} $updated$}
         \State \textbf{break} \Comment{Convergência alcançada prematuramente}
     \EndIf
 \EndFor
@@ -170,7 +197,19 @@ O detalhamento da lógica iterativa, incluindo a condição de otimização, enc
 \end{algorithmic}
 \end{algorithm}
 
-\subsubsection{Resultados e Discussão}
+\subsubsection{Decisões de Projeto e Desafios Encontrados}
+
+Inicialmente foi adotada uma abordagem com matrizes de adjacencia para a geração dos grafos por meio do algoritmo parametrizável para geração de grafos aleatórios, mas com o crescimento do número de vértices, a complexidade espacial de $O(V^2)$ tornou-se proibitiva, especialmente para grafos densos, o tempo para leitura e escrita dos dados se tornou inviável (cerca de 5-10 minutos para grafos com 10.000 vértices). Para contornar esse desafio, a implementação foi adaptada para utilizar listas de adjacência, que oferecem uma representação mais compacta e eficiente para grafos esparsos, reduzindo a complexidade espacial para $O(V + E)$.
+
+O algoritmo \textit{get\_neighbors} na implementação inicial tinha um tempo de execução $O(V)$ para cada vértice analisado, criando um \textit{overhead} significativo. Já na implementação final com listas de adjacência, o tempo de execução para obter vizinhos de um grafo se torna $O(1)$ ou $O(k)$ para vértices de $k$ vizinhos.
+
+Além disso, para evitar a presença de arestas paralelas e loops, uma estrutura de dados \textit{seen\_nodes} foi introduzida durante a geração dos grafos, garantindo a unicidade das arestas e a integridade estrutural do grafo. Apesar de não ter funcionado inicialmente, o problema foi identificado e corrigido, sua causa era que para grafos com o número de arestas maior que o máximo teórico para um grafo simples $(E > \frac{N(N-1)}{2})$, o algoritmo de geração entrava em um loop infinito tentando gerar arestas únicas, a solução foi limitar o número de arestas para o máximo teórico permitido para um grafo simples.
+
+Ademais, durante os \textit{batches} de \textit{benchmarking}, foi necessário introduzir uma lógica de \textit{caching}, para evitar que os grafos fossem gerados todas as vezes que o algoritmo fosse rodado, economizando uma quantidade siginificativa de tempo.
+
+A implementação de ambos os algoritmos exigiu uma série de decisões de projeto para garantir a eficiência e a correção. Para o algoritmo de Dijkstra, a escolha da estrutura de dados para a fila de prioridade foi crucial, optando-se por um \textit{Binary Heap (heappq)} para equilibrar a complexidade de inserção e extração. Já para o Bellman-Ford, a implementação do mecanismo de \textit{Early Stopping} foi fundamental para evitar iterações desnecessárias em casos onde os caminhos mínimos já haviam convergido.
+
+\subsubsection{Discussão e Resultados}
 
 Os resultados empíricos obtidos no Experimento 1 corroboram a fundamentação teórica acerca da complexidade assintótica de ambos os algoritmos. A Tabela \ref{tab:exp1_results} apresenta os tempos de execução (\textit{wall-clock time}) em milissegundos para grafos esparsos e densos, variando o número de vértices ($N$) de 100 a 10.000.
 
@@ -342,9 +381,7 @@ A sub-rotina final integra o fatiamento topológico do \textit{Partial Dijkstra}
 \subsubsection{(Extra): Comportamento em Escala e Exaustão do Grafo ($N \in [100, 10000]$ e $k \le 128$)}
 
 Além do experimento dentro do contexto principal do trabalho $N = 1000$ e $k \le 16$ foi feita uma análise com a expansão dos testes para cenários mais amplos (variando $N$ de 100 a 10.000 e forçando o limite de $k$ até 128). Essa análise extra expôs alguns aspectos interessantes do limite de segurança imposto pelo Lema 3.2.
-
-\subsection{Discussão e Conclusões}
-
+\subsection{Discussão e Resultados}
 
 \subsubsection{Cenário Principal: $N=1000$, $m=2000$ com $k \in [2, 16]$}
 

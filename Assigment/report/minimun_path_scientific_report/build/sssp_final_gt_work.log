@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.31)  31 MAY 2026 22:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.31)  1 JUN 2026 22:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -435,6 +435,9 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 ) (build/sssp_final_gt_work.aux
 
+LaTeX Warning: Label `tab:ambiente_teste' multiply defined.
+
+
 LaTeX Warning: Label `tab:exp2_sensitivity_principal' multiply defined.
 
 
@@ -570,153 +573,153 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 31
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 54.
+(Font)              <10> on input line 53.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 54.
+(Font)              <7> on input line 53.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 81.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 109.
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 95.
- [2{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [3]
-<media/exp1/exp1_dijkstra_vs_bellman.png, id=121, 1011.78pt x 433.62pt>
+) [2]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 122.
+ [3{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [4]
+<media/exp1/exp1_dijkstra_vs_bellman.png, id=143, 1011.78pt x 433.62pt>
 File: media/exp1/exp1_dijkstra_vs_bellman.png Graphic file (type png)
 <use media/exp1/exp1_dijkstra_vs_bellman.png>
-Package pdftex.def Info: media/exp1/exp1_dijkstra_vs_bellman.png  used on input line 206.
+Package pdftex.def Info: media/exp1/exp1_dijkstra_vs_bellman.png  used on input line 245.
 (pdftex.def)             Requested size: 483.69687pt x 207.30156pt.
- [4] [5 <./media/exp1/exp1_dijkstra_vs_bellman.png>] [6] [7]
+ [5 <./media/exp1/exp1_dijkstra_vs_bellman.png>] [6] [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 342.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 342.
+(hyperref)                removing `math shift' on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 342.
+(hyperref)                removing `\in' on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 342.
+(hyperref)                removing `math shift' on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\le' on input line 342.
+(hyperref)                removing `math shift' on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 342.
+(hyperref)                removing `\le' on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 381.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 386.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 386.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 386.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 386.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 349.
+(hyperref)                removing `math shift' on input line 386.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `\in' on input line 386.
 
-<media/exp2/main/1_k_vs_P.png, id=151, 505.89pt x 361.35pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 386.
+
+<media/exp2/main/1_k_vs_P.png, id=170, 505.89pt x 361.35pt>
 File: media/exp2/main/1_k_vs_P.png Graphic file (type png)
 <use media/exp2/main/1_k_vs_P.png>
-Package pdftex.def Info: media/exp2/main/1_k_vs_P.png  used on input line 382.
+Package pdftex.def Info: media/exp2/main/1_k_vs_P.png  used on input line 419.
 (pdftex.def)             Requested size: 483.69687pt x 345.5026pt.
 [8]
-<media/exp2/main/4_S_vs_P.png, id=160, 505.89pt x 361.35pt>
+<media/exp2/main/4_S_vs_P.png, id=178, 505.89pt x 361.35pt>
 File: media/exp2/main/4_S_vs_P.png Graphic file (type png)
 <use media/exp2/main/4_S_vs_P.png>
-Package pdftex.def Info: media/exp2/main/4_S_vs_P.png  used on input line 393.
+Package pdftex.def Info: media/exp2/main/4_S_vs_P.png  used on input line 430.
 (pdftex.def)             Requested size: 483.69687pt x 345.5026pt.
  [9 <./media/exp2/main/1_k_vs_P.png>]
-<media/exp2/main/3_tempo_vs_kw.png, id=168, 505.89pt x 361.35pt>
+<media/exp2/main/3_tempo_vs_kw.png, id=186, 505.89pt x 361.35pt>
 File: media/exp2/main/3_tempo_vs_kw.png Graphic file (type png)
 <use media/exp2/main/3_tempo_vs_kw.png>
-Package pdftex.def Info: media/exp2/main/3_tempo_vs_kw.png  used on input line 404.
+Package pdftex.def Info: media/exp2/main/3_tempo_vs_kw.png  used on input line 441.
 (pdftex.def)             Requested size: 483.69687pt x 345.5026pt.
  [10 <./media/exp2/main/4_S_vs_P.png>]
-<media/exp2/main/2_histograma_lema.png, id=176, 505.89pt x 361.35pt>
+<media/exp2/main/2_histograma_lema.png, id=194, 505.89pt x 361.35pt>
 File: media/exp2/main/2_histograma_lema.png Graphic file (type png)
 <use media/exp2/main/2_histograma_lema.png>
-Package pdftex.def Info: media/exp2/main/2_histograma_lema.png  used on input line 415.
+Package pdftex.def Info: media/exp2/main/2_histograma_lema.png  used on input line 452.
 (pdftex.def)             Requested size: 483.69687pt x 345.5026pt.
  [11 <./media/exp2/main/3_tempo_vs_kw.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 428.
+(hyperref)                removing `math shift' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 428.
+(hyperref)                removing `\in' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 428.
+(hyperref)                removing `math shift' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 428.
+(hyperref)                removing `math shift' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\le' on input line 428.
+(hyperref)                removing `\le' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 428.
+(hyperref)                removing `math shift' on input line 465.
 
 [12 <./media/exp2/main/2_histograma_lema.png>]
-<media/exp2/sparse/N_100/dashboard_analise.png, id=192, 1148.1294pt x 1136.0844pt>
+<media/exp2/sparse/N_100/dashboard_analise.png, id=210, 1148.1294pt x 1136.0844pt>
 File: media/exp2/sparse/N_100/dashboard_analise.png Graphic file (type png)
 <use media/exp2/sparse/N_100/dashboard_analise.png>
-Package pdftex.def Info: media/exp2/sparse/N_100/dashboard_analise.png  used on input line 467.
+Package pdftex.def Info: media/exp2/sparse/N_100/dashboard_analise.png  used on input line 504.
 (pdftex.def)             Requested size: 483.69687pt x 478.60835pt.
  [13] [14 <./media/exp2/sparse/N_100/dashboard_analise.png>]
-<media/exp2/sparse/N_500/dashboard_analise.png, id=209, 1148.6112pt x 1136.0844pt>
+<media/exp2/sparse/N_500/dashboard_analise.png, id=227, 1148.6112pt x 1136.0844pt>
 File: media/exp2/sparse/N_500/dashboard_analise.png Graphic file (type png)
 <use media/exp2/sparse/N_500/dashboard_analise.png>
-Package pdftex.def Info: media/exp2/sparse/N_500/dashboard_analise.png  used on input line 503.
+Package pdftex.def Info: media/exp2/sparse/N_500/dashboard_analise.png  used on input line 540.
 (pdftex.def)             Requested size: 483.69687pt x 478.41766pt.
  [15 <./media/exp2/sparse/N_500/dashboard_analise.png>]
-<media/exp2/sparse/N_1000/dashboard_analise.png, id=218, 1148.6112pt x 1136.0844pt>
+<media/exp2/sparse/N_1000/dashboard_analise.png, id=236, 1148.6112pt x 1136.0844pt>
 File: media/exp2/sparse/N_1000/dashboard_analise.png Graphic file (type png)
 <use media/exp2/sparse/N_1000/dashboard_analise.png>
-Package pdftex.def Info: media/exp2/sparse/N_1000/dashboard_analise.png  used on input line 539.
+Package pdftex.def Info: media/exp2/sparse/N_1000/dashboard_analise.png  used on input line 576.
 (pdftex.def)             Requested size: 483.69687pt x 478.41766pt.
  [16] [17 <./media/exp2/sparse/N_1000/dashboard_analise.png>]
-<media/exp2/sparse/N_5000/dashboard_analise.png, id=231, 1148.6112pt x 1136.0844pt>
+<media/exp2/sparse/N_5000/dashboard_analise.png, id=249, 1148.6112pt x 1136.0844pt>
 File: media/exp2/sparse/N_5000/dashboard_analise.png Graphic file (type png)
 <use media/exp2/sparse/N_5000/dashboard_analise.png>
-Package pdftex.def Info: media/exp2/sparse/N_5000/dashboard_analise.png  used on input line 576.
+Package pdftex.def Info: media/exp2/sparse/N_5000/dashboard_analise.png  used on input line 613.
 (pdftex.def)             Requested size: 483.69687pt x 478.41766pt.
  [18 <./media/exp2/sparse/N_5000/dashboard_analise.png>]
-<media/exp2/sparse/N_10000/dashboard_analise.png, id=240, 1148.1294pt x 1136.0844pt>
+<media/exp2/sparse/N_10000/dashboard_analise.png, id=258, 1148.1294pt x 1136.0844pt>
 File: media/exp2/sparse/N_10000/dashboard_analise.png Graphic file (type png)
 <use media/exp2/sparse/N_10000/dashboard_analise.png>
-Package pdftex.def Info: media/exp2/sparse/N_10000/dashboard_analise.png  used on input line 614.
+Package pdftex.def Info: media/exp2/sparse/N_10000/dashboard_analise.png  used on input line 651.
 (pdftex.def)             Requested size: 483.69687pt x 478.60835pt.
  [19] (build/sssp_final_gt_work.bbl) [20 <./media/exp2/sparse/N_10000/dashboard_analise.png>] (build/sssp_final_gt_work.aux)
  ***********
@@ -728,21 +731,21 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `sssp_final_gt_work.out' has not changed.
-(rerunfilecheck)             Checksum: C599ADC1D7EE23AC3DAF2DB92C7CE2FC;5327.
+(rerunfilecheck)             Checksum: 3C5BA312D2F9422C3A3B485F974A16AB;5786.
  ) 
 Here is how much of TeX's memory you used:
- 15497 strings out of 469515
- 239602 string characters out of 5470807
- 666596 words of memory out of 5000000
- 43844 multiletter control sequences out of 15000+600000
+ 15511 strings out of 469515
+ 239846 string characters out of 5470807
+ 666727 words of memory out of 5000000
+ 43853 multiletter control sequences out of 15000+600000
  709971 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,12n,93p,825b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,12n,93p,919b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on build/sssp_final_gt_work.pdf (20 pages, 2495446 bytes).
+Output written on build/sssp_final_gt_work.pdf (20 pages, 2501664 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 272 compressed objects within 3 object streams
- 65 named destinations out of 1000 (max. 500000)
- 203 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 374 PDF objects out of 1000 (max. 8388607)
+ 291 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 219 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,8 +1,18 @@
 \begin{thebibliography}{}
 
+\bibitem[Dijkstra, 1959]{dijkstra1959note}
+Dijkstra, E.~W. (1959).
+\newblock A note on two problems in connexion with graphs.
+\newblock {\em Numerische Mathematik}, 1(1).
+
 \bibitem[Duan et~al., 2025]{breakingTheSortingBarrier}
 Duan, R., Mao, J., Mao, X., Shu, X., and Yin, L. (2025).
 \newblock Breaking the sorting barrier for directed single-source shortest paths.
+
+\bibitem[Ford, 1954]{ford}
+Ford, L.~R. (1954).
+\newblock Network flow theory.
+\newblock {\em Proceedings of the American Mathematical Society}, 5(2).
 
 \bibitem[Ribas, 2026]{ribas2026sssp}
 Ribas, E. R. L.~D. (2026).

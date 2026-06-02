@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex build/sssp_final_gt_work"] 1780278700.84693 "build/sssp_final_gt_work.aux" "build/sssp_final_gt_work.bbl" "build/sssp_final_gt_work" 1780278713.73416 0
-  "./references.bib" 1780270903.52054 1855 a7d1f1f0641d43f6645251a87ec0b608 ""
+["bibtex build/sssp_final_gt_work"] 1780364284.43524 "build/sssp_final_gt_work.aux" "build/sssp_final_gt_work.bbl" "build/sssp_final_gt_work" 1780364300.52388 0
+  "./references.bib" 1780361637.69305 2258 36e85105f3e7feeaf46debd5b86604e0 ""
   "/usr/share/texmf-dist/bibtex/bst/base/apalike.bst" 1775415801 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "build/sssp_final_gt_work.aux" 1780278713.17182 11765 5e44d1fd35a19ccf1afd1dce1b8cde06 "pdflatex"
+  "build/sssp_final_gt_work.aux" 1780364299.61414 12764 25471e3f73eb73684f3abe7e5d013dcf "pdflatex"
   (generated)
   "build/sssp_final_gt_work.bbl"
   "build/sssp_final_gt_work.blg"
   (rewritten before read)
-["pdflatex"] 1780278701.05093 "/home/archEnzo/github/er/sssp/Assigment/report/minimun_path_scientific_report/sssp_final_gt_work.tex" "build/sssp_final_gt_work.pdf" "sssp_final_gt_work" 1780278713.73461 0
-  "/home/archEnzo/github/er/sssp/Assigment/report/minimun_path_scientific_report/sssp_final_gt_work.tex" 1780278668.05668 39410 6d6d140e3570053282d2c0a4784a46e0 ""
+["pdflatex"] 1780364284.67434 "/home/archEnzo/github/er/sssp/Assigment/report/minimun_path_scientific_report/sssp_final_gt_work.tex" "build/sssp_final_gt_work.pdf" "sssp_final_gt_work" 1780364300.5246 0
+  "/home/archEnzo/github/er/sssp/Assigment/report/minimun_path_scientific_report/sssp_final_gt_work.tex" 1780364259.40414 44668 83c017beb489b53c194c079188874951 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1775415801 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1775415801 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1775415801 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -158,9 +158,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1780266701 5385779 47c0c393a77fd4a098bacfd57d66b88a ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1780266588 2328187 e31a5f21cacc65f0822d9bc52132e7b8 ""
-  "build/sssp_final_gt_work.aux" 1780278713.17182 11765 5e44d1fd35a19ccf1afd1dce1b8cde06 "pdflatex"
-  "build/sssp_final_gt_work.bbl" 1780278701.04082 711 6801a6373a19b821f0b48f72ae0bba53 "bibtex build/sssp_final_gt_work"
-  "build/sssp_final_gt_work.out" 1780278713.17482 5327 c599adc1d7ee23ac3daf2db92c7ce2fc "pdflatex"
+  "build/sssp_final_gt_work.aux" 1780364299.61414 12764 25471e3f73eb73684f3abe7e5d013dcf "pdflatex"
+  "build/sssp_final_gt_work.bbl" 1780364284.65214 1034 2551c4f54c8d8c8eed8ea686f84d8abe "bibtex build/sssp_final_gt_work"
+  "build/sssp_final_gt_work.out" 1780364299.61914 5786 3c5ba312d2f9422c3a3b485f974a16ab "pdflatex"
   "media/exp1/exp1_dijkstra_vs_bellman.png" 1780273151.62086 323459 83c3569a8be58b423a9ea37e921d42d2 ""
   "media/exp2/main/1_k_vs_P.png" 1780273181.15909 109644 5c1b01d72569c55710c5e1d4254f610a ""
   "media/exp2/main/2_histograma_lema.png" 1780273181.19953 107972 544462671751df02f243a0ec7be37f3c ""
@@ -172,7 +172,7 @@
   "media/exp2/sparse/N_500/dashboard_analise.png" 1780277337.48094 339206 d68552e752f903553f2021a58837c00f ""
   "media/exp2/sparse/N_5000/dashboard_analise.png" 1780277337.48241 362331 e8a85429d5871ddaf3366aa680996e0f ""
   "qsl-template.sty" 1780094685.93554 1874 372f7e5579a4bad781795742d596ae7d ""
-  "sssp_final_gt_work.tex" 1780278668.05668 39410 6d6d140e3570053282d2c0a4784a46e0 ""
+  "sssp_final_gt_work.tex" 1780364259.40414 44668 83c017beb489b53c194c079188874951 ""
   (generated)
   "build/sssp_final_gt_work.aux"
   "build/sssp_final_gt_work.log"

@@ -4,45 +4,45 @@ The top-level auxiliary file: sssp_final_gt_work.aux
 The style file: apalike.bst
 Database file #1: references.bib
 Warning--empty journal in breakingTheSortingBarrier
-You've used 3 entries,
+You've used 5 entries,
             1935 wiz_defined-function locations,
-            488 strings with 4295 characters,
-and the built_in function-call counts, 899 in all, are:
-= -- 85
-> -- 42
-< -- 2
-+ -- 14
-- -- 14
-* -- 66
-:= -- 179
-add.period$ -- 8
-call.type$ -- 3
-change.case$ -- 22
-chr.to.int$ -- 3
-cite$ -- 4
-duplicate$ -- 33
-empty$ -- 51
-format.name$ -- 17
-if$ -- 161
+            499 strings with 4493 characters,
+and the built_in function-call counts, 1461 in all, are:
+= -- 139
+> -- 56
+< -- 4
++ -- 20
+- -- 18
+* -- 108
+:= -- 285
+add.period$ -- 14
+call.type$ -- 5
+change.case$ -- 34
+chr.to.int$ -- 5
+cite$ -- 6
+duplicate$ -- 59
+empty$ -- 93
+format.name$ -- 23
+if$ -- 267
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 17
-num.names$ -- 9
-pop$ -- 18
+missing$ -- 3
+newline$ -- 27
+num.names$ -- 15
+pop$ -- 24
 preamble$ -- 1
-purify$ -- 22
+purify$ -- 34
 quote$ -- 0
-skip$ -- 29
+skip$ -- 53
 stack$ -- 0
-substring$ -- 36
-swap$ -- 0
+substring$ -- 62
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 18
+type$ -- 30
 warning$ -- 1
-while$ -- 6
+while$ -- 10
 width$ -- 0
-write$ -- 36
+write$ -- 62
 (There was 1 warning)
